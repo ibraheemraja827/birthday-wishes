@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Little Surprise 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Quicksand:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <div id="petals"></div>
+  <div id="pg"></div>
+  <button id="music" aria-label="Music">♪</button>
+  <audio id="bgm" src="music.mp3" loop preload="auto"></audio>
+
+  <!-- 0 : LOADER -->
+  <section class="step" id="st0">
+    <svg id="heart" viewBox="0 0 24 24" width="130" height="130">
+      <defs><linearGradient id="g" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#c2185b"/><stop offset="1" stop-color="#ff7aa8"/></linearGradient></defs>
+      <path class="h-out" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.8 4.8 6.3 4.8c2 0 3.7 1.1 5.7 3.2 2-2.1 3.7-3.2 5.7-3.2 3.5 0 5.4 3.7 3.9 7C19.5 16.4 12 21 12 21z"/>
+      <path class="h-in" id="hin" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 2.8 4.8 6.3 4.8c2 0 3.7 1.1 5.7 3.2 2-2.1 3.7-3.2 5.7-3.2 3.5 0 5.4 3.7 3.9 7C19.5 16.4 12 21 12 21z"/>
+    </svg>
+    <h2>Wrapping your surprise…</h2>
+    <p class="sub" id="pct">0%</p>
+    <button class="btn" id="begin">Tap to begin ✨</button>
+  </section>
+
+  <!-- 1 : DATE -->
+  <section class="step" id="st1">
+    <p class="kicker">a very special day</p>
+    <h2>The Day You Arrived</h2>
+    <div class="card">
+      <div class="mon" id="mon"></div>
+      <div class="cal" id="cal"></div>
+    </div>
+    <div class="script" id="dt"></div>
+    <p class="sub">The world got a little brighter that day.</p>
+    <button class="btn" data-next>Next</button>
+  </section>
+
+  <!-- 2 : WISHES -->
+  <section class="step" id="st2">
+    <p class="kicker">for <span data-name></span></p>
+    <h2>Little Things I Wish You</h2>
+    <div id="wl"></div>
+    <button class="btn" data-next>Read My Letter 💌</button>
+  </section>
+
+  <!-- 3 : LETTER -->
+  <section class="step" id="st3">
+    <div class="stage">
+      <div class="env" id="env">
+        <div class="front"></div>
+        <div class="flap"><span class="seal">❤</span></div>
+        <p class="tap">tap to open</p>
+      </div>
+      <div class="paper" id="paper"></div>
+    </div>
+    <button class="btn hide" id="b3" data-next>Continue →</button>
+  </section>
+
+  <!-- 5 : BALLOONS -->
+  <section class="step" id="st4">
+    <h2>Pop a Balloon 🎈</h2>
+    <p class="sub">Every one is hiding a wish.</p>
+    <div id="bg"></div>
+    <p class="count" id="cnt"></p>
+    <button class="btn hide" id="b4" data-next>Continue →</button>
+  </section>
+
+  <!-- 6 : REASONS -->
+  <section class="step" id="st6">
+    <p class="kicker">just a few of many</p>
+    <h2>Why You're Special</h2>
+    <div id="fcs"></div>
+    <p class="count" id="fcnt"></p>
+    <button class="btn hide" id="b6" data-next>Continue →</button>
+  </section>
+
+  <!-- 7 : CAKE -->
+  <section class="step" id="st7">
+    <h2>Make a Wish 🎂</h2>
+    <p class="sub" id="cakeMsg">Tap the candles to blow them out.</p>
+    <div id="cakeWrap">
+      <div class="plate"></div>
+      <div class="cake cakeA"></div>
+      <div class="cake cakeB"></div>
+      <div class="cutline"></div>
+      <div id="knife"></div>
+    </div>
+    <button class="btn hide" id="b7" data-next>Continue →</button>
+  </section>
+
+  <!-- 8 : STAR HEART -->
+  <section class="step" id="st5">
+    <h2>Your Star Heart</h2>
+    <p class="sub">Drag your finger through the stars ✨</p>
+    <canvas id="cv"></canvas>
+    <button class="btn" data-next>One More Thing →</button>
+  </section>
+
+  <!-- 9 : FINALE -->
+  <section class="step" id="st8">
+    <canvas id="fw"></canvas>
+    <div class="rays"></div>
+    <div id="stars"></div>
+    <div id="lanterns"></div>
+    <div class="bunting" id="bunting"></div>
+    <div class="fin">
+      <div class="gh"><i class="rg"></i><i class="rg r2"></i><span>💖</span></div>
+      <p class="kicker light">today belongs to you</p>
+      <h1 id="title"></h1>
+      <div class="datechip" id="datechip"></div>
+      <div class="script gold" id="fname"></div>
+      <p class="sub light" id="fmsg"></p>
+      <div class="emoji-row">
+        <span style="--i:0">🎂</span><span style="--i:1">🎁</span><span style="--i:2">🎈</span><span style="--i:3">🎉</span><span style="--i:4">💝</span>
+      </div>
+      <button class="btn ghost" id="replay">Watch Again ↻</button>
+    </div>
+  </section>
+
+  <nav id="dots"></nav>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
